@@ -9,8 +9,8 @@ require('dotenv').config();
 
 function App() {
   const [product] = React.useState({
-    name: "Tesla Roadster",
-    price: 64998.67,
+    name: "Sony TV",
+    price: 500,
     description: "Cool car"
   });
 
@@ -38,7 +38,7 @@ function App() {
         stripeKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY}
         token={handleToken}
         amount={product.price * 100}
-        name="Tesla Roadster"
+        name={product.name}
         billingAddress
         shippingAddress
       />
